@@ -1,12 +1,11 @@
-import { StatusBar } from "expo-status-bar";
+import "react-native-gesture-handler";
 import { Text, View } from "react-native";
-import Home from "./screens/Home";
-import About from "./screens/About";
-import ReviewDetail from "./screens/ReviewDetail";
 import { useFonts } from "expo-font";
 import { globalStyles } from "./styles/global";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeStack from "./routes/HomeStack";
+import DrawerNavigation from "./routes/drawerNavigation";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -21,31 +20,10 @@ export default function App() {
     );
   }
 
-  const Stack = createNativeStackNavigator();
-
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Group
-          screenOptions={{ headerStyle: { backgroundColor: "#eee" } }}
-        >
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{
-              title: "Game Zone",
-            }}
-          />
-          <Stack.Screen name="About" component={About} />
-          <Stack.Screen
-            name="ReviewDetail"
-            component={ReviewDetail}
-            options={{
-              title: "Review Details",
-            }}
-          />
-        </Stack.Group>
-      </Stack.Navigator>
+      <HomeStack />
+      {/* <DrawerNavigation /> */}
     </NavigationContainer>
   );
 }
