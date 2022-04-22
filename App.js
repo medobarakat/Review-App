@@ -26,15 +26,25 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          // options={{
-          //   headerShown: false,
-          // }}
-        />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="ReviewDetail" component={ReviewDetail} />
+        <Stack.Group
+          screenOptions={{ headerStyle: { backgroundColor: "#eee" } }}
+        >
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              title: "Game Zone",
+            }}
+          />
+          <Stack.Screen name="About" component={About} />
+          <Stack.Screen
+            name="ReviewDetail"
+            component={ReviewDetail}
+            options={{
+              title: "Review Details",
+            }}
+          />
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );
