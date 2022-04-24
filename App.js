@@ -1,11 +1,9 @@
 import "react-native-gesture-handler";
+import * as React from "react";
 import { Text, View } from "react-native";
 import { useFonts } from "expo-font";
-import { globalStyles } from "./styles/global";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeStack from "./routes/HomeStack";
-import DrawerNavigation from "./routes/drawerNavigation";
+import DrawerNavigation from "./routes/DrawerNavigation";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -22,8 +20,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <HomeStack />
-      {/* <DrawerNavigation /> */}
+      <DrawerNavigation />
     </NavigationContainer>
   );
 }
