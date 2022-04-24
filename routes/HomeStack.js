@@ -2,6 +2,7 @@ import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../screens/Home";
 import ReviewDetail from "../screens/ReviewDetail";
+import Header from "../components/Header";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ export default function HomeStack() {
           component={Home}
           options={{
             title: "Game Zone",
+            // headerTitle: () => <Header />,
           }}
         />
         <Stack.Screen
