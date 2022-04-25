@@ -19,8 +19,7 @@ export default function HomeStack() {
           name="Home Page"
           component={Home}
           options={{
-            title: "Game Zone",
-            // headerTitle: () => <Header />,
+            headerTitle: () => <Header />,
           }}
         />
         <Stack.Screen
