@@ -6,7 +6,7 @@ import Header from "../components/Header";
 
 const Stack = createNativeStackNavigator();
 
-export default function HomeStack() {
+export default function HomeStack({ navigation }) {
   return (
     <Stack.Navigator>
       <Stack.Group
@@ -18,8 +18,11 @@ export default function HomeStack() {
         <Stack.Screen
           name="Home Page"
           component={Home}
-          options={{
-            headerTitle: () => <Header />,
+          options={(navigation) => {
+            return {
+              headerTitle: () => <Header navigation={navigation} />,
+              // title: "Review Details",
+            };
           }}
         />
         <Stack.Screen
