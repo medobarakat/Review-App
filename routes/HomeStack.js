@@ -18,10 +18,10 @@ export default function HomeStack({ navigation }) {
         <Stack.Screen
           name="Home Page"
           component={Home}
-          options={(navigation) => {
+          options={() => {
             return {
-              headerTitle: () => <Header navigation={navigation} />,
-              // title: "Review Details",
+              // headerTitle: () => <Header navigation={navigation} menu main />,
+              title: "Review Details",
             };
           }}
         />

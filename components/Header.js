@@ -1,24 +1,26 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import React from "react";
+import * as React from "react";
 import { StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-// import { DrawerActions } from "@react-navigation/native";
-// import { useNavigation } from "@react-navigation/native";
 
-// const navigation = useNavigation();
-
-const Header = ({ navigation }) => {
+const Header = ({ navigation, menu, main, about }) => {
   const menuHandler = () => {
-    // navigation.openDrawer();
-    console.warn(navigation);
-    // Navigation.dispatch(DrawerActions.openDrawer());
+    navigation.openDrawer();
   };
   return (
     <View style={HeaderStyles.container}>
-      <TouchableOpacity style={HeaderStyles.icon}>
+      {menu && (
+        <TouchableOpacity style={HeaderStyles.icon}>
+          <MaterialIcons name="menu" size={28} onPress={menuHandler} />
+        </TouchableOpacity>
+      )}
+
+      {/* <TouchableOpacity style={HeaderStyles.icon}>
         <MaterialIcons name="menu" size={28} onPress={menuHandler} />
-      </TouchableOpacity>
-      <Text style={HeaderStyles.txt}>Game Zone</Text>
+      </TouchableOpacity> */}
+
+      {main && <Text style={HeaderStyles.txt}>Game Zone </Text>}
+      {about && <Text style={HeaderStyles.txt}>About Game Zone </Text>}
     </View>
   );
 };
@@ -42,6 +44,6 @@ const HeaderStyles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    left: 12,
+    left: 5,
   },
 });

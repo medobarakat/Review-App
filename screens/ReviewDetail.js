@@ -1,17 +1,21 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
-import { globalStyles } from "../styles/global";
+import { globalStyles, Images } from "../styles/global";
+import Card from "../components/Card";
 
 const ReviewDetail = ({ route, navigation }) => {
   const { title, rating } = route.params;
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.TitleText}>
-        The Title Is <Text style={globalStyles.specialText}>{title}</Text>
-      </Text>
-      <Text style={globalStyles.TitleText}>
-        And The Rating Is <Text style={globalStyles.specialText}>{rating}</Text>
-      </Text>
+      <Card>
+        <Text style={globalStyles.TitleText}>
+          The Title Is <Text style={globalStyles.specialText}>{title}</Text>
+        </Text>
+        <View style={globalStyles.titleImg}>
+          <Text style={globalStyles.TitleText}>And The Rating Is</Text>
+          <Image source={Images.ratings[rating]} />
+        </View>
+      </Card>
     </View>
   );
 };
