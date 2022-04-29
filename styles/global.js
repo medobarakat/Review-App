@@ -14,7 +14,6 @@ export const globalStyles = StyleSheet.create({
   },
   specialText: {
     color: "red",
-    // paddingBottom: 10,
   },
   paragraph: {
     marginVertical: 8,
