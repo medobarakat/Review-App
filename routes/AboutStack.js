@@ -19,7 +19,7 @@ export default function AboutStack({ navigation }) {
           options={() => {
             return {
               headerTitle: () => <Header navigation={navigation} about />,
-              //title: "About Game Zone",
+              // title: "About Game Zone",
             };
           }}
         />

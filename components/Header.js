@@ -48,14 +48,16 @@ const HeaderStyles = StyleSheet.create({
     fontSize: 25,
     fontFamily: "Nunito-bold",
     color: "#333",
+    padding: 20,
   },
   icon: {
     position: "absolute",
     left: 5,
   },
   img: {
-    width: 26,
-    height: 26,
-    marginHorizontal: 10,
+    width: 35,
+    height: 35,
+    padding: 20,
+    marginTop: 20,
   },
 });
