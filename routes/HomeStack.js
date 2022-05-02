@@ -20,8 +20,8 @@ export default function HomeStack({ navigation }) {
           component={Home}
           options={() => {
             return {
-              // headerTitle: () => <Header navigation={navigation} main />,
-              title: "Review Details",
+              headerTitle: () => <Header navigation={navigation} main />,
+              //title: "Review Details",
             };
           }}
         />
