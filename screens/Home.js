@@ -1,4 +1,11 @@
-import { View, Text, Modal, FlatList, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Modal,
+  FlatList,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
 import React, { useState } from "react";
 import { globalStyles } from "../styles/global";
 import Card from "../components/Card";
@@ -30,24 +37,29 @@ const Home = ({ navigation }) => {
         style={globalStyles.modal}
       >
         <View>
-          <MaterialIcons
-            name="close"
-            size={28}
-            onPress={() => setOpenModal(false)}
-            style={{ ...globalStyles.icon, ...globalStyles.iconclose }}
-          />
+          <Pressable>
+            <MaterialIcons
+              name="close"
+              size={28}
+              onPress={() => setOpenModal(false)}
+              style={{ ...globalStyles.icon, ...globalStyles.iconclose }}
+            />
+          </Pressable>
+
           <Text>Hi From Modal</Text>
         </View>
       </Modal>
       <View>
-        <MaterialIcons
-          name="add"
-          size={28}
-          onPress={() => {
-            setOpenModal(true);
-          }}
-          style={globalStyles.icon}
-        />
+        <Pressable>
+          <MaterialIcons
+            name="add"
+            size={28}
+            onPress={() => {
+              setOpenModal(true);
+            }}
+            style={globalStyles.icon}
+          />
+        </Pressable>
       </View>
       <FlatList
         data={reviews}
