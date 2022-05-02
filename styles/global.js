@@ -27,6 +27,18 @@ export const globalStyles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "#eee",
   },
+  icon: {
+    marginBottom: 10,
+    alignSelf: "center",
+    borderWidth: 1,
+    borderColor: "#f2f2f2",
+    padding: 10,
+    borderRadius: 10,
+  },
+  iconclose: {
+    marginTop: 20,
+  },
+  modal: {},
 });
 
 export const Images = {

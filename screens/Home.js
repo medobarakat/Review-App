@@ -1,9 +1,11 @@
-import { View, Text, Button, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, Modal, FlatList, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { globalStyles } from "../styles/global";
 import Card from "../components/Card";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Home = ({ navigation }) => {
+  const [openModal, setOpenModal] = useState(false);
   const [reviews, setreviews] = useState([
     {
       title: "zelda Breath of fresh air",
@@ -22,6 +24,31 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={globalStyles.container}>
+      <Modal
+        visible={openModal}
+        animationType="slide"
+        style={globalStyles.modal}
+      >
+        <View>
+          <MaterialIcons
+            name="close"
+            size={28}
+            onPress={() => setOpenModal(false)}
+            style={{ ...globalStyles.icon, ...globalStyles.iconclose }}
+          />
+          <Text>Hi From Modal</Text>
+        </View>
+      </Modal>
+      <View>
+        <MaterialIcons
+          name="add"
+          size={28}
+          onPress={() => {
+            setOpenModal(true);
+          }}
+          style={globalStyles.icon}
+        />
+      </View>
       <FlatList
         data={reviews}
         renderItem={({ item }) => (
