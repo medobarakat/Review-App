@@ -38,7 +38,9 @@ export const globalStyles = StyleSheet.create({
   iconclose: {
     marginTop: 20,
   },
-  modal: {},
+  modal: {
+    flex: 1,
+  },
 });
 
 export const Images = {
