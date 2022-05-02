@@ -18,7 +18,7 @@ export default function AboutStack({ navigation }) {
           component={About}
           options={() => {
             return {
-              // headerTitle: () => <Header navigation={navigation} about />,
+              //headerTitle: () => <Header navigation={navigation} about />,
               title: "About Ahmed Zone",
             };
           }}

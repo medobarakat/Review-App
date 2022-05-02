@@ -23,8 +23,10 @@ const Header = ({ navigation, main, about }) => {
           source={require("../assets/heart_logo.png")}
           style={HeaderStyles.img}
         />
-        {main && <Text style={HeaderStyles.txt}>Ahmed Zone </Text>}
-        {about && <Text style={HeaderStyles.txt}>About Ahmed Zone </Text>}
+        {main && <Text style={HeaderStyles.txt}>Ahmed Gaming Zone </Text>}
+        {about && (
+          <Text style={HeaderStyles.txt}>About Ahmed Gaming Zone </Text>
+        )}
       </View>
     </ImageBackground>
   );

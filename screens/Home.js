@@ -13,7 +13,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import ReviewForm from "./ReviewForm";
 const Home = ({ navigation }) => {
   const [openModal, setOpenModal] = useState(false);
-  const [reviews, setreviews] = useState([
+  const [reviews, setReviews] = useState([
     {
       title: "zelda Breath of fresh air",
       rating: 5,
@@ -29,6 +29,12 @@ const Home = ({ navigation }) => {
     },
   ]);
 
+  const addReview = (AllReviews)=>{
+    reviews.key=Math.random().toString();
+    setReviews((current)=>{
+      return [AllReviews,...current] 
+    })
+  }
   return (
     <View style={globalStyles.container}>
       <Modal
@@ -45,7 +51,7 @@ const Home = ({ navigation }) => {
               style={{ ...globalStyles.icon, ...globalStyles.iconclose }}
             />
           </Pressable>
-          <ReviewForm />
+          <ReviewForm addReview={addReview}/>
         </View>
       </Modal>
       <View>
