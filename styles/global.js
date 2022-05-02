@@ -38,8 +38,22 @@ export const globalStyles = StyleSheet.create({
   iconclose: {
     marginTop: 20,
   },
-  modal: {
-    flex: 1,
+  modal: { flex: 1 },
+  input: {
+    borderColor: "#ddd",
+    borderWidth: 1,
+    padding: 15,
+    height: 50,
+    marginBottom: 10,
+    fontSize: 18,
+    borderRadius: 6,
+  },
+  btn: {
+    height: 50,
+    marginTop: 20,
+    padding: 15,
+    width: 50,
+    alignSelf: "center",
   },
 });
 

@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { globalStyles } from "../styles/global";
 import Card from "../components/Card";
 import { MaterialIcons } from "@expo/vector-icons";
-
+import ReviewForm from "./ReviewForm";
 const Home = ({ navigation }) => {
   const [openModal, setOpenModal] = useState(false);
   const [reviews, setreviews] = useState([
@@ -45,8 +45,7 @@ const Home = ({ navigation }) => {
               style={{ ...globalStyles.icon, ...globalStyles.iconclose }}
             />
           </Pressable>
-
-          <Text>Hi From Modal</Text>
+          <ReviewForm />
         </View>
       </Modal>
       <View>
